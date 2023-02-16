@@ -30,11 +30,28 @@ async function seed(bcryptSalt: Salt) {
     password: await hash("admin", bcryptSalt),
     roles: ["user"],
   };
+  const customerData = {
+    email: "customer@mail.com"
+  }
+  const productData = {
+    name: "Coke Pet",
+    itemCode: "Pet2571"
+  }
   await client.user.upsert({
     where: { username: data.username },
     update: {},
     create: data,
   });
+  await client.customer.upsert({
+    where: { email: customerData.email },
+    update: {},
+    create: customerData
+  })
+  await client.product.upsert({
+    where: { itemCode: productData.itemCode },
+    update: {},
+    create: productData
+  })
   void client.$disconnect();
 
   console.info("Seeding database with custom seed...");

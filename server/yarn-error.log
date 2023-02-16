@@ -1,0 +1,98 @@
+Arguments: 
+  /Users/mjeck/.nvm/versions/node/v14.21.2/bin/node /Users/mjeck/.yarn/bin/yarn.js install
+
+PATH: 
+  /Users/mjeck/.yarn/bin:/Users/mjeck/.config/yarn/global/node_modules/.bin:/Users/mjeck/.nvm/versions/node/v14.21.2/bin:/Users/mjeck/Library/Python/3.9/bin:/opt/homebrew/opt/openssl@3/bin:/Users/mjeck/Library/Python/3.8/bin:/opt/homebrew/opt/mongodb-community@4.4/bin:/opt/homebrew/opt/openjdk/bin:/Library/Frameworks/Python.framework/Versions/3.11/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/Library/Apple/usr/bin:/Users/mjeck/.yarn/bin:/Users/mjeck/.config/yarn/global/node_modules/.bin:/Users/mjeck/.nvm/versions/node/v14.21.2/bin:/Users/mjeck/Library/Python/3.9/bin:/opt/homebrew/opt/openssl@3/bin:/Users/mjeck/Library/Python/3.8/bin:/opt/homebrew/opt/mongodb-community@4.4/bin:/opt/homebrew/opt/openjdk/bin:/Library/Frameworks/Python.framework/Versions/3.11/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/mjeck/.cargo/bin:/usr/local/sbin:/Users/mjeck/bin:/usr/local/sbin:/Users/mjeck/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  14.21.2
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: 8670970560:error:1408F119:SSL routines:ssl3_get_record:decryption failed or bad record mac:../deps/openssl/openssl/ssl/record/ssl3_record.c:677:
+
+npm manifest: 
+  {
+    "name": "@sample-service/server",
+    "private": true,
+    "scripts": {
+      "start": "nest start",
+      "start:watch": "nest start --watch",
+      "start:debug": "nest start --debug --watch",
+      "build": "nest build",
+      "test": "jest",
+      "seed": "ts-node scripts/seed.ts",
+      "db:migrate-save": "prisma migrate dev",
+      "db:migrate-up": "prisma migrate deploy",
+      "db:clean": "ts-node scripts/clean.ts",
+      "db:init": "run-s \"db:migrate-save -- --name 'initial version'\" db:migrate-up seed",
+      "prisma:generate": "prisma generate",
+      "docker:db": "docker-compose -f docker-compose.db.yml up -d",
+      "docker:build": "docker build .",
+      "compose:up": "docker-compose up -d",
+      "compose:down": "docker-compose down --volumes"
+    },
+    "dependencies": {
+      "@nestjs/common": "8.4.7",
+      "@nestjs/config": "1.1.5",
+      "@nestjs/core": "8.4.7",
+      "@nestjs/graphql": "9.1.2",
+      "@nestjs/jwt": "8.0.0",
+      "@nestjs/passport": "8.2.2",
+      "@nestjs/platform-express": "8.4.7",
+      "@nestjs/serve-static": "2.2.2",
+      "@nestjs/swagger": "5.1.5",
+      "@prisma/client": "4.6.1",
+      "apollo-server-express": "3.6.1",
+      "bcrypt": "5.0.1",
+      "class-transformer": "0.5.1",
+      "class-validator": "0.13.2",
+      "graphql": "15.7.2",
+      "graphql-type-json": "0.3.2",
+      "nest-access-control": "2.0.3",
+      "nest-morgan": "1.0.1",
+      "nestjs-prisma": "0.19.0",
+      "npm-run-all": "4.1.5",
+      "passport": "0.6.0",
+      "passport-http": "0.3.0",
+      "passport-jwt": "4.0.0",
+      "reflect-metadata": "0.1.13",
+      "swagger-ui-express": "4.3.0",
+      "ts-node": "9.1.1"
+    },
+    "devDependencies": {
+      "@nestjs/cli": "8.2.5",
+      "@nestjs/testing": "8.4.7",
+      "@types/bcrypt": "5.0.0",
+      "@types/express": "4.17.9",
+      "@types/graphql-type-json": "0.3.2",
+      "@types/jest": "26.0.19",
+      "@types/normalize-path": "3.0.0",
+      "@types/passport-http": "0.3.9",
+      "@types/passport-jwt": "3.0.6",
+      "@types/supertest": "2.0.11",
+      "jest": "27.0.6",
+      "jest-mock-extended": "^2.0.4",
+      "prisma": "4.6.1",
+      "supertest": "4.0.2",
+      "ts-jest": "27.0.3",
+      "type-fest": "0.11.0",
+      "typescript": "4.2.3"
+    },
+    "jest": {
+      "preset": "ts-jest",
+      "testEnvironment": "node",
+      "modulePathIgnorePatterns": ["<rootDir>/dist/"]
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
