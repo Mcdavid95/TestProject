@@ -44,7 +44,17 @@ class ProductCreateInput {
   })
   itemPrice?: number | null;
 
-  @ApiProperty({
+  @ApiProperty({ 
+    required: true,
+    type: String,
+  })
+  @IsString()
+  @Field(() => String, {
+    nullable: false,
+  })
+  itemCode!: string;
+
+  @ApiProperty({ 
     required: false,
     type: String,
   })

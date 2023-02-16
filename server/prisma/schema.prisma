@@ -14,6 +14,7 @@ model User {
   lastName  String?
   password  String
   roles     Json
+  sales     Sale[]
   updatedAt DateTime @updatedAt
   username  String   @unique
 }
@@ -35,11 +36,12 @@ model Customer {
   address   Address? @relation(fields: [addressId], references: [id])
   addressId String?
   createdAt DateTime @default(now())
-  email     String?
+  email     String @unique
   firstName String?
   id        String   @id @default(cuid())
   lastName  String?
   orders    Order[]
+  sales    Sale[]
   phone     String?
   updatedAt DateTime @updatedAt
 }
@@ -61,7 +63,33 @@ model Product {
   description String?
   id          String   @id @default(cuid())
   itemPrice   Float?
+  itemCode    String @unique
   name        String?
   orders      Order[]
+  sales       ProductSale[]
   updatedAt   DateTime @updatedAt
 }
+
+model ProductSale {
+  id            String @id @default(cuid())
+  quantity       Int
+  itemPrice     Float
+  productInfo   Product @relation(fields: [productId], references: [id])
+  productId     String
+  saleId        String
+  saleInfo      Sale @relation(fields: [saleId], references: [id])
+}
+
+model Sale {
+  id          String  @id @default(cuid())
+  customerInfo    Customer? @relation(fields: [customerId], references: [id])
+  soldBy      User? @relation(fields: [userId], references: [id])
+  products    ProductSale[]
+  userId      String
+  customerId  String
+  paidAmount  Float
+  totalAmount Float
+  outstandingAmount Float 
+  createdAt DateTime @default(now())
+}
+

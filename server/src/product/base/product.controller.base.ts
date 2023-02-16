@@ -51,6 +51,7 @@ export class ProductControllerBase {
     return await this.service.create({
       data: data,
       select: {
+        itemCode: true,
         createdAt: true,
         description: true,
         id: true,

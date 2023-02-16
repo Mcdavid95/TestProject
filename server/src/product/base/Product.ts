@@ -73,6 +73,16 @@ class Product {
   name!: string | null;
 
   @ApiProperty({
+    required: true,
+    type: String,
+  })
+  @IsString()
+  @Field(() => String, {
+    nullable: false,
+  })
+  itemCode!: string;
+
+  @ApiProperty({
     required: false,
     type: () => [Order],
   })
